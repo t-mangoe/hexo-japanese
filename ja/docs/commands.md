@@ -1,5 +1,5 @@
 ---
-title: Commands
+title: コマンド
 ---
 ## init
 
@@ -7,7 +7,7 @@ title: Commands
 $ hexo init [folder]
 ```
 
-Initializes a website. If no `folder` is provided, Hexo will set up the website in the current directory.
+Webサイトを初期化します。`folder`が指定されない場合、Hexoは現在のディレクトリにWebサイトをセットアップします。
 
 ## new
 
@@ -15,29 +15,29 @@ Initializes a website. If no `folder` is provided, Hexo will set up the website 
 $ hexo new [layout] <title>
 ```
 
-Creates a new article. If no `layout` is provided, Hexo will use the `default_layout` from [_config.yml](configuration.html). If the `title` contains spaces, surround it with quotation marks.
+新しい記事を作成します。`layout`が指定されない場合、Hexoは[_config.yml](configuration.html)の`default_layout`を使用します。`title`にスペースが含まれる場合、引用符で囲みます。
 
-Option | Description
+オプション | 説明
 --- | ---
-`-p`, `--path` | Post path. Customize the path of the post.
-`-r`, `--replace` | Replace the current post if existed.
-`-s`, `--slug` | Post slug. Customize the URL of the post.
+`-p`, `--path` | 投稿パス。投稿のパスをカスタマイズします。
+`-r`, `--replace` | 現在の投稿がすでに存在している場合、置き換えます。
+`-s`, `--slug` | slugを投稿します。投稿のURLをカスタマイズします。
 
-By default, Hexo will use the title to define the path of the file. For pages, it will create a directory of that name and an `index.md` file in it. Use the `--path` option to override that behaviour and define the file path:
+デフォルトでは、Hexoは投稿のタイトルを使用してファイルのパスを定義します。ページ毎に、タイトルの名前のディレクトリが作られ、この中に`index.md`のファイルが作成されます。`--path`オプションを指定して、この動作を上書きし、ファイルパスを定義します。
 
 ```bash
 hexo new page --path about/me "About me"
 ```
 
-will create `source/about/me.md` file with the title "About me" set in the front matter.
+上記は、"About me"というタイトルがつけられたファイルを`source/about/me.md`に作成します。
 
-Please note that the title is mandatory. For example, this will not result in the behaviour you might expect:
+タイトルは必須です。例えば、以下は期待する動作にはなりません。
 
 ```bash
 hexo new page --path about/me
 ```
 
-will create the post `source/_posts/about/me.md` with the title "page" in the front matter. This is because there is only one argument (`page`) and the default layout is `post`.
+この場合、"page"というタイトルのファイルが`source/_posts/about/me.md`として作成されます。これは、引数が１つ（`page`）しかなく、デフォルトのレイアウトが`post`であるためです。
 
 ## generate
 
@@ -45,15 +45,15 @@ will create the post `source/_posts/about/me.md` with the title "page" in the fr
 $ hexo generate
 ```
 
-Generates static files.
+静的ファイルを生成します。
 
-Option | Description
+オプション | 説明
 --- | ---
-`-d`, `--deploy` | Deploy after generation finishes
-`-w`, `--watch` | Watch file changes
-`-b`, `--bail` | Raise an error if any unhandled exception is thrown during generation
-`-f`, `--force` | Force regenerate
-`-c`, `--concurrency` | Maximum number of files to be generated in parallel. Default is infinity
+`-d`, `--deploy` | 生成終了後にデプロイします。
+`-w`, `--watch` | ファイルの変更を監視します。
+`-b`, `--bail` | ファイル生成中に未処理の例外がスローされた場合、エラーを発生させます。
+`-f`, `--force` | 強制的に再生成します。
+`-c`, `--concurrency` | 並行して生成されるファイルの最大数。デフォルトは無限です。
 
 ## publish
 
@@ -61,7 +61,7 @@ Option | Description
 $ hexo publish [layout] <filename>
 ```
 
-Publishes a draft.
+下書きを公開します。
 
 ## server
 
@@ -69,13 +69,13 @@ Publishes a draft.
 $ hexo server
 ```
 
-Starts a local server. By default, this is at `http://localhost:4000/`.
+ローカルサーバーを起動します。デフォルトでは、`http://localhost:4000/`でアクセスできます。
 
-Option | Description
+オプション | 説明
 --- | ---
-`-p`, `--port` | Override default port
-`-s`, `--static` | Only serve static files
-`-l`, `--log` | Enable logger. Override logger format.
+`-p`, `--port` | デフォルトのポートを上書きします。
+`-s`, `--static` | 静的ファイルのみを提供します。
+`-l`, `--log` | ロガーを有効にします。ロガー形式をオーバーライドします。
 
 ## deploy
 
@@ -83,11 +83,11 @@ Option | Description
 $ hexo deploy
 ```
 
-Deploys your website.
+Webサイトをデプロイします。
 
-Option | Description
+オプション | 説明
 --- | ---
-`-g`, `--generate` | Generate before deployment
+`-g`, `--generate` | デプロイ前に生成します。
 
 ## render
 
@@ -95,11 +95,11 @@ Option | Description
 $ hexo render <file1> [file2] ...
 ```
 
-Renders files.
+ファイルをレンダリングします。
 
-Option | Description
+オプション | 説明
 --- | ---
-`-o`, `--output` | Output destination
+`-o`, `--output` | 出力先を指定します。
 
 ## migrate
 
@@ -107,7 +107,7 @@ Option | Description
 $ hexo migrate <type>
 ```
 
-[Migrates](migration.html) content from other blog systems.
+他のブログシステムからコンテンツを[移行](migration.html)します。
 
 ## clean
 
@@ -115,7 +115,7 @@ $ hexo migrate <type>
 $ hexo clean
 ```
 
-Cleans the cache file (`db.json`) and generated files (`public`).
+キャッシュファイル(`db.json`)および生成されたファイル(`public`)を消去します。
 
 ## list
 
@@ -123,7 +123,7 @@ Cleans the cache file (`db.json`) and generated files (`public`).
 $ hexo list <type>
 ```
 
-Lists all routes.
+全てのルートをリストします。
 
 ## version
 
@@ -131,58 +131,58 @@ Lists all routes.
 $ hexo version
 ```
 
-Displays version information.
+バージョン情報を表示します。
 
-## Options
+## オプション
 
-### Safe mode
+### セーフモード
 
 ``` bash
 $ hexo --safe
 ```
 
-Disables loading plugins and scripts. Try this if you encounter problems after installing a new plugin.
+プラグインとスクリプトの読み込みを無効にします。新しいプラグインのインストール後に問題が発生した場合、こちらを試してみてください。
 
-### Debug mode
+### デバッグモード
 
 ``` bash
 $ hexo --debug
 ```
 
-Logs verbose messages to the terminal and to `debug.log`. Try this if you encounter any problems with Hexo. If you see errors, please [raise a GitHub issue](https://github.com/hexojs/hexo/issues/new).
+詳細なメッセージを端末と`debug.log`に出力します。Hexoで問題が発生した場合は、こちらを試してみてください。エラーを見つけたときは、[GitHubにイシューを報告](https://github.com/hexojs/hexo/issues/new)してください。
 
-### Silent mode
+### サイレントモード
 
 ``` bash
 $ hexo --silent
 ```
 
-Silences output to the terminal.
+端末への出力を無効にします。
 
-### Customize config file path
+### 構成ファイルパスのカスタマイズ
 
 ``` bash
 $ hexo --config custom.yml
 ```
 
-Uses a custom config file (instead of `_config.yml`). Also accepts a comma-separated list (no spaces) of JSON or YAML config files that will combine the files into a single `_multiconfig.yml`.
+カスタム構成ファイルを使用します(`_config.yml`の代わりに)。JSONやYAML形式の構成ファイルのカンマ区切りのリストも指定可能です。この場合、リストのファイルは`_multiconfig.yml`に結合されます。
 
 ``` bash
 $ hexo --config custom.yml,custom2.json
 ```
 
-### Display drafts
+### 下書きの表示
 
 ``` bash
 $ hexo --draft
 ```
 
-Displays draft posts (stored in the `source/_drafts` folder).
+投稿の下書きを表示します（下書きは`source/_drafts`に保存されています）。
 
-### Customize CWD
+### CWDをカスタマイズする
 
 ``` bash
 $ hexo --cwd /path/to/cwd
 ```
 
-Customizes the path of current working directory.
+現在の作業ディレクトリのパスをカスタマイズします。
