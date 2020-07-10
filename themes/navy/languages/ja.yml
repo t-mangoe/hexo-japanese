@@ -28,14 +28,14 @@ sidebar:
     configuration: 構成
     commands: コマンド
     migration: マイグレーション
-    basic_usage: Basic Usage
-    writing: Writing
+    basic_usage: 基本的な使い方
+    writing: 書き込み
     front_matter: Front-matter
-    tag_plugins: Tag Plugins
-    asset_folders: Asset Folders
-    data_files: Data Files
-    server: Server
-    generating: Generating
+    tag_plugins: タグプラグイン
+    asset_folders: アセットフォルダ
+    data_files: データファイル
+    server: サーバ
+    generating: 生成
     deployment: Deployment
     github_pages: GitHub Pages
     gitlab_pages: GitLab Pages
