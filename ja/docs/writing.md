@@ -1,66 +1,66 @@
 ---
-title: Writing
+title: 書き込み
 ---
 
 {% youtube AIqBubK6ZLc %}
 
-To create a new post or a new page, you can run the following command:
+新しい投稿または新しいページを作成するには、次のコマンドを実行します。
 
 ``` bash
 $ hexo new [layout] <title>
 ```
 
-`post` is the default `layout`, but you can supply your own. You can change the default layout by editing the `default_layout` setting in `_config.yml`.
+`post`がデフォルトの`layout`ですが、独自のものを指定することも可能です。`_config.yml`の`default_layout`を編集することで、デフォルトのレイアウトを変更できます。
 
-### Layout
+### レイアウト
 
-There are three default layouts in Hexo: `post`, `page` and `draft`. Files created by each of them is saved to a different path. Newly created posts are saved to the `source/_posts` folder.
+Hexoには`post`、 `page` 、 `draft`の３つのレイアウトがあります。それぞれのレイアウトで作成されたファイルは、別々のパスに保存されます。新しく作成された投稿は`source/_posts`フォルダに保存されます。
 
-Layout | Path
+レイアウト | パス
 --- | ---
 `post` | `source/_posts`
 `page` | `source`
 `draft` | `source/_drafts`
 
-{% note tip Don't process my posts! %}
-If you don't want your posts processed, you can set `layout: false` in front-matter.
+{% note tip 投稿を処理しないで！ %}
+投稿を処理したくない場合は、front-matterで`layout: false`を設定します。
 {% endnote %}
 
-### Filename
+### ファイル名
 
-By default, Hexo uses the post title as its filename. You can edit the `new_post_name` setting in `_config.yml` to change the default filename. For example, `:year-:month-:day-:title.md` will prefix filenames with the post creation date. You can use the following placeholders:
+デフォルトでは、Hexoは投稿のタイトルをファイル名として使用します。デフォルトのファイル名を変更する場合、`_config.yml`の`new_post_name`を編集します。例えば、`:year-:month-:day-:title.md`と設定すると、ファイル名の先頭に投稿の作成日を付加します。以下のプレースホルダーが使用可能です。
 
-Placeholder | Description
+プレースホルダー | 説明
 --- | ---
-`:title` | Post title (lower case, with spaces replaced by hyphens)
-`:year` | Created year, e.g. `2015`
-`:month` | Created month (leading zeros), e.g. `04`
-`:i_month` | Created month (no leading zeros), e.g. `4`
-`:day` | Created day (leading zeros), e.g. `07`
-`:i_day` | Created day (no leading zeros), e.g. `7`
+`:title` | 投稿のタイトル (小文字。スペースはハイフンに置き換え)
+`:year` | 作成年。例：`2015`
+`:month` | 作成された月（先行ゼロ）。例：`04`
+`:i_month` | 作成された月（先行ゼロなし）。例：`4`
+`:day` | 作成日（先行ゼロ）。例：`07`
+`:i_day` | 作成日（先行ゼロなし）。例：`7`
 
-### Drafts
+### 下書き
 
-Previously, we mentioned a special layout in Hexo: `draft`. Posts initialized with this layout are saved to the `source/_drafts` folder. You can use the `publish` command to move drafts to the `source/_posts` folder. `publish` works in a similar way to the `new` command.
+以前、Hexoでの特別なレイアウトである`draft`について説明しました。このレイアウトで初期化された投稿は、`source/_drafts`フォルダに保存されます。`publish`コマンドを使うことで、下書きを`source/_posts`フォルダに移動できます。`publish`は`new`コマンドと同じように機能します。
 
 ``` bash
 $ hexo publish [layout] <title>
 ```
 
-Drafts are not displayed by default. You can add the `--draft` option when running Hexo or enable the `render_drafts` setting in `_config.yml` to render drafts.
+下書きはデフォルトでは表示されません。Hexoの実行時に`--draft`オプションを追加するか、`_config.yml`の`render_drafts`を有効化すると、下書きをレンダリングできます。
 
 ### Scaffolds
 
-When creating posts, Hexo will build files based on the corresponding file in `scaffolds` folder. For example:
+投稿を作成するとき、Hexoは`scaffolds`フォルダ内の対応するファイルに基づいてファイルを作成します。例えば、以下：
 
 ``` bash
 $ hexo new photo "My Gallery"
 ```
 
-When you run this command, Hexo will try to find `photo.md` in the `scaffolds` folder and build the post based on it. The following placeholders are available in scaffolds:
+このコマンドを実行すると、Hexoは`scaffolds`フォルダから`photo.md`を検索し、それに基づいて投稿を作成します。次のプレースホルダーが、scaffoldsで使用可能です。
 
-Placeholder | Description
+プレースホルダー | 説明
 --- | ---
-`layout` | Layout
-`title` | Title
-`date` | File created date
+`layout` | レイアウト
+`title` | タイトル
+`date` | ファイル作成日
