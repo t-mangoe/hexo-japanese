@@ -1,13 +1,13 @@
 ---
-title: Tag Plugins
+title: タグプラグイン
 ---
-Tag plugins are different from post tags. They are ported from Octopress and provide a useful way for you to quickly add specific content to your posts.
+タグプラグインは投稿タグとは異なります。Octopressから移植されたもので、特定のコンテンツを投稿に素早く追加するための便利な方法を提供します。
 
 {% youtube I07XMi7MHd4 %}
 
-## Block Quote
+## ブロック引用
 
-Perfect for adding quotes to your post, with optional author, source and title information.
+著者や引用元、タイトル情報などを選択し、投稿に引用を追加するのに最適です。
 
 **Alias:** quote
 
@@ -17,9 +17,9 @@ content
 {% endblockquote %}
 ```
 
-### Examples
+### 例
 
-**No arguments. Plain blockquote.**
+**引数なし。単純なブロック引用**
 
 ```
 {% blockquote %}
@@ -31,7 +31,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque hendrerit 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque hendrerit lacus ut purus iaculis feugiat. Sed nec tempor elit, quis aliquam neque. Curabitur sed diam eget dolor fermentum semper at eu lorem.
 {% endblockquote %}
 
-**Quote from a book**
+**本からの引用**
 
 ```
 {% blockquote David Levithan, Wide Awake %}
@@ -43,7 +43,7 @@ Do not just seek happiness for yourself. Seek happiness for all. Through kindnes
 Do not just seek happiness for yourself. Seek happiness for all. Through kindness. Through mercy.
 {% endblockquote %}
 
-**Quote from Twitter**
+**Twitterからの引用**
 
 ```
 {% blockquote @DevDocs https://twitter.com/devdocs/status/356095192085962752 %}
@@ -55,7 +55,7 @@ NEW: DevDocs now comes with syntax highlighting. http://devdocs.io
 NEW: DevDocs now comes with syntax highlighting. http://devdocs.io
 {% endblockquote %}
 
-**Quote from an article on the web**
+**Webの記事からの引用**
 
 ```
 {% blockquote Seth Godin http://sethgodin.typepad.com/seths_blog/2009/07/welcome-to-island-marketing.html Welcome to Island Marketing %}
@@ -67,9 +67,9 @@ Every interaction is both precious and an opportunity to delight.
 Every interaction is both precious and an opportunity to delight.
 {% endblockquote %}
 
-## Code Block
+## コードブロック
 
-Useful feature for adding code snippets to your post.
+コードスニペットを投稿に追加するための便利な機能です。
 
 **Alias:** code
 
@@ -79,19 +79,19 @@ code snippet
 {% endcodeblock %}
 ```
 
-Specify additional options in `option:value` format, e.g. `line_number:false first_line:5`.
+追加オプションの指定は、`option:value`の形式で行います。e.g. `line_number:false first_line:5`。
 
-Extra Options | Description | Default
+追加オプション | 説明 | デフォルト
 --- | --- | ---
-`line_number` | Show line number | `true`
-`highlight` | Enable code highlighting | `true`
-`first_line` | Specify the first line number | `1`
-`mark` | Line highlight specific line(s), each value separated by a comma. Specify number range using a dash<br>Example: `mark:1,4-7,10` will mark line 1, 4 to 7 and 10. |
-`wrap` | Wrap the code block in [`<table>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table) | `true`
+`line_number` | 行番号を表示 | `true`
+`highlight` | コードの強調表示を有効化 | `true`
+`first_line` | 最初の行番号を指定 | `1`
+`mark` | カンマ区切りで行を指定し、特定の行を強調表示します。ダッシュを使用して番号の範囲も指定できます。<br>例：`mark:1,4-7,10`は1,４~7,10をマークします。 |
+`wrap` | [`<table>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table)でコードブロックを囲みます | `true`
 
-### Examples
+### 例
 
-**A plain code block**
+**単純なコードブロック**
 
 ```
 {% codeblock %}
@@ -103,7 +103,7 @@ alert('Hello World!');
 alert('Hello World!');
 {% endcodeblock %}
 
-**Specifying the language**
+**言語を指定**
 
 ```
 {% codeblock lang:objc %}
@@ -115,7 +115,7 @@ alert('Hello World!');
 [rectangle setX: 10 y: 10 width: 20 height: 20];
 {% endcodeblock %}
 
-**Adding a caption to the code block**
+**コードブロックにキャプションを追加**
 
 ```
 {% codeblock Array.map %}
@@ -127,7 +127,7 @@ array.map(callback[, thisArg])
 array.map(callback[, thisArg])
 {% endcodeblock %}
 
-**Adding a caption and a URL**
+**キャプションとURLを追加**
 
 ```
 {% codeblock _.compact http://underscorejs.org/#compact Underscore.js %}
@@ -141,9 +141,9 @@ _.compact([0, 1, false, 2, '', 3]);
 => [1, 2, 3]
 {% endcodeblock %}
 
-## Backtick Code Block
+## バックティックコードブロック
 
-This is identical to using a code block, but instead uses three backticks to delimit the block.
+コードブロックの使用と同じですが、代わりに3つのバックティックを使用してブロックを区切ります。
 
 {% raw %}
 &#96`` [language] [title] [url] [link text]
@@ -151,9 +151,9 @@ code snippet
 &#96;``
 {% endraw %}
 
-## Pull Quote
+## 抜粋
 
-To add pull quotes to your posts:
+投稿に引用を追加します：
 
 ```
 {% pullquote [class] %}
@@ -163,7 +163,7 @@ content
 
 ## jsFiddle
 
-To embed a jsFiddle snippet:
+jsFiddleスニペットを埋め込みます：
 
 ```
 {% jsfiddle shorttag [tabs] [skin] [width] [height] %}
@@ -171,7 +171,7 @@ To embed a jsFiddle snippet:
 
 ## Gist
 
-To embed a Gist snippet:
+Gistスニペットを埋め込みます：
 
 ```
 {% gist gist_id [filename] %}
@@ -179,7 +179,7 @@ To embed a Gist snippet:
 
 ## iframe
 
-To embed an iframe:
+iframeを埋め込みます：
 
 ```
 {% iframe url [width] [height] %}
@@ -187,7 +187,7 @@ To embed an iframe:
 
 ## Image
 
-Inserts an image with specified size.
+指定したサイズの画像を挿入します。
 
 ```
 {% img [class names] /path/to/image [width] [height] '"title text" "alt text"' %}
@@ -195,47 +195,47 @@ Inserts an image with specified size.
 
 ## Link
 
-Inserts a link with `target="_blank"` attribute.
+`target="_blank"`属性がついたリンクを挿入します。
 
 ```
 {% link text url [external] [title] %}
 ```
 
-## Include Code
+## コードの挿入
 
-Inserts code snippets in `source/downloads/code` folder. The folder location can be specified through the `code_dir` option in the config.
+`source/downloads/code`フォルダーにコードスニペットを挿入します。フォルダーの場所は、構成の`code_dir`オプションで指定可能です。
 
 ```
 {% include_code [title] [lang:language] [from:line] [to:line] path/to/file %}
 ```
 
-### Examples
+### 例
 
-**Embed the whole content of test.js**
+**test.jsのコンテンツ全体を埋め込む**
 
 ```
 {% include_code lang:javascript test.js %}
 ```
 
-**Embed line 3 only**
+**３行目のみを埋め込む**
 
 ```
 {% include_code lang:javascript from:3 to:3 test.js %}
 ```
 
-**Embed line 5 to 8**
+**5行目から8行目を埋め込む**
 
 ```
 {% include_code lang:javascript from:5 to:8 test.js %}
 ```
 
-**Embed line 5 to the end of file**
+**5行目からファイルの最後までを埋め込む**
 
 ```
 {% include_code lang:javascript from:5 test.js %}
 ```
 
-**Embed line 1 to 8**
+**1行目から8行目までを埋め込む**
 
 ```
 {% include_code lang:javascript to:8 test.js %}
@@ -243,7 +243,7 @@ Inserts code snippets in `source/downloads/code` folder. The folder location can
 
 ## YouTube
 
-Inserts a YouTube video.
+YouTubeビデオを挿入します。
 
 ```
 {% youtube video_id %}
@@ -251,62 +251,62 @@ Inserts a YouTube video.
 
 ## Vimeo
 
-Inserts a responsive or specified size Vimeo video.
+レスポンシブまたは指定サイズのVimeoビデオを挿入します。
 
 ```
 {% vimeo video_id [width] [height] %}
 ```
 
-## Include Posts
+## 投稿を含める
 
-Include links to other posts.
+他の投稿へのリンクを含めます。
 
 ```
 {% post_path filename %}
 {% post_link filename [title] [escape] %}
 ```
 
-You can ignore permalink and folder information, like languages and dates, when using this tag.
+このタグを使用する場合は、言語や日付などのパーマリンクやフォルダ情報を無視できます。
 
-For instance: `{% raw %}{% post_link how-to-bake-a-cake %}{% endraw %}`.
+例： `{% raw %}{% post_link how-to-bake-a-cake %}{% endraw %}`.
 
-This will work as long as the filename of the post is `how-to-bake-a-cake.md`, even if the post is located at `source/posts/2015-02-my-family-holiday` and has permalink `2018/en/how-to-bake-a-cake`.
+これは、投稿が`source/posts/2015-02-my-family-holiday`にあり、`2018/en/how-to-bake-a-cake`のパーマリンクがある場合でも、投稿のファイル名が`how-to-bake-a-cake.md`である限り機能します。
 
-You can customize the text to display, instead of displaying the post's title. Using `post_path` inside Markdown syntax `[]()` is not supported.
+投稿のタイトルを表示する代わりに、表示するテキストをカスタマイズできます。マークダウン構文の`[]()`内での`post_path`の使用はサポートされていません。
 
-Post's title and custom text are escaped by default. You can use the `escape` option to disable escaping.
+投稿のタイトルとカスタムテキストはデフォルトでエスケープされています。エスケープを無効にすルには、`escape`オプションを使用します。
 
-For instance:
+例：
 
-**Display title of the post.**
+**投稿のタイトルを表示**
 
 `{% raw %}{% post_link hexo-3-8-released %}{% endraw %}`
 
 {% post_link hexo-3-8-released %}
 
-**Display custom text.**
+**カスタムテキストを表示**
 
 `{% raw %}{% post_link hexo-3-8-released 'Link to a post' %}{% endraw %}`
 
 {% post_link hexo-3-8-released 'Link to a post' %}
 
-**Escape title.**
+**タイトルのエスケープ**
 
 ```
 {% post_link hexo-4-released 'How to use <b> tag in title' %}
 ```
 {% post_link hexo-4-released 'How to use <b> tag in title' %}
 
-**Do not escape title.**
+**タイトルをエスケープしない**
 
 ```
 {% post_link hexo-4-released '<b>bold</b> custom title' false %}
 ```
 {% post_link hexo-4-released '<b>bold</b> custom title' false %}
 
-## Include Assets
+## Assetsを含める
 
-Include post assets.
+投稿のassetsを含めます。
 
 ```
 {% asset_path filename %}
@@ -316,7 +316,7 @@ Include post assets.
 
 ## Raw
 
-If certain content is causing processing issues in your posts, wrap it with the `raw` tag to avoid rendering errors.
+特定のコンテンツが投稿の処理に問題を引き起こしている場合、`raw`タグでコンテンツをラップし、レンダリングエラーを回避できます。
 
 ```
 {% raw %}
@@ -325,11 +325,11 @@ content
 ```
 
 
-## Post Excerpt
+## 抜粋を投稿
 
-Use text placed before the `<!-- more -->` tag as an excerpt for the post. `excerpt:` value in the [front-matter](/docs/front-matter#Settings-amp-Their-Default-Values), if specified, will take precedent.
+`<!-- more -->`タグの前に配置されたテキストを投稿の抜粋として使用します。[front-matter](/docs/front-matter#Settings-amp-Their-Default-Values)にて`excerpt:`の値が指定されている場合、こちらが優先されます。
 
-**Examples:**
+**例：**
 
 ```
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
