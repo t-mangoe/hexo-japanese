@@ -1,25 +1,25 @@
 ---
-title: Asset Folders
+title: アセットフォルダー
 ---
-## Global Asset Folder
+## グローバルアセットフォルダー
 
-Assets are non-post files in the `source` folder, such as images, CSS or JavaScript files. For instance, If you are only going to have a few images in the Hexo project, then the easiest way is to keep them in a `source/images` directory. Then, you can access them using something like `![](/images/image.jpg)`.
+アセットは、画像やCSS、JavaScriptといった、`source`フォルダー内の非投稿ファイルです。例えば、Hexoプロジェクトに画像を少しだけ保持させたいだけの場合、最も簡単な方法は、それらの画像を`source/images`ディレクトリに保存することです。こうすると、`![](/images/image.jpg)`のような記載を使って、保存した画像にアクセスできます。
 
-## Post Asset Folder
+## 投稿用アセットフォルダー
 
 {% youtube feIDVQ2tz0o %}
 
-For users who expect to regularly serve images and/or other assets, and for those who prefer to separate their assets on a post-per-post basis, Hexo also provides a more organized way to manage assets. This slightly more involved, but very convenient approach to asset management can be turned on by setting the `post_asset_folder` setting in `_config.yml` to true.
+画像やその他のアセットを定期的に提供することを期待するユーザーや、投稿ごとにアセットを分離することを好むユーザのために、Hexoはアセットを管理するためのより体系的な方法も提供します。これは少し複雑ですが、便利な手段であり、`_config.yml`の`post_asset_folder`の設定をtrueにすることで有効化できます。
 
 ``` yaml _config.yml
 post_asset_folder: true
 ```
 
-With asset folder management enabled, Hexo will create a folder every time you make a new post with the `hexo new [layout] <title>` command. This asset folder will have the same name as the markdown file associated with the post. Place all assets related to your post into the associated folder, and you will be able to reference them using a relative path, making for an easier and more convenient workflow.
+アセットフォルダー管理を有効にすると、`hexo new [layout] <title>`コマンドで新しく投稿が作成される度に、Hexoがフォルダーを作成します。このアセットフォルダーは、投稿に関連付けられたマークダウンファイルと同じ名前になります。投稿に関連する全てのアセットを関連付けられたフォルダーに配置すると、相対パスを使用してそれらを参照できるため、ワークフローがより簡単で便利になります。
 
-## Tag Plugins For Relative Path Referencing
+## 相対パス参照用のタグプラグイン
 
-Referencing images or other assets using normal markdown syntax and relative paths may lead to incorrect display on archive or index pages. Plugins have been created by the community to address this issue in Hexo 2. However, with the release of Hexo 3, several new tag plugins were added to core. These enable you to reference your assets more easily in posts:
+通常のマークダウン構文と相対パスを使用して画像などのアセットを参照すると、アーカイブページやインデックスページに正しく表示されない場合があります。Hexo2にてこの問題に対処するため、コミュニティによってプラグインが作成されました。そしてHexo3のリリースでは、いくつかの新しいタグプラグインがコアに追加されました。これらにより、投稿の中でアセットをより簡単に参照することが可能です。
 
 ```
 {% asset_path slug %}
@@ -27,13 +27,13 @@ Referencing images or other assets using normal markdown syntax and relative pat
 {% asset_link slug [title] %}
 ```
 
-For example, with post asset folders enabled, if you place an image `example.jpg` into your asset folder, it will *not* appear on the index page if you reference it using a relative path with regular `![](/example.jpg)` markdown syntax (however, it will work as expected in the post itself).
+例えば、投稿用アセットフォルダーを有効にし、アセットフォルダーに`example.jpg`という画像ファイルを配置している場合に、一般的なマークダウン構文の相対パスである`![](/example.jpg)`を使用して参照しても、インデックスページには画像は表示されません（投稿の中では期待通りの動作をしますが）。
 
-The correct way to reference the image will thus be using tag plugin syntax rather than markdown:
+このため、画像を参照する正しい方法は、マークダウンではなくタグプラグイン構文を使用することです。
 
 ```
 {% asset_img example.jpg This is an example image %}
 {% asset_img "spaced asset.jpg" "spaced title" %}
 ```
 
-This way, the image will appear both inside the post and on index and archive pages.
+こうすることで、画像が投稿の中だけでなく、インデックスおよびアーカイブページにも表示されます。
